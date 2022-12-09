@@ -20,7 +20,7 @@ export const fetchAllTasksThunk = () => async (dispatch) => {
 export const editTaskThunk = task => async dispatch => {
     try {
         let res = await axios.put(`${path}/tasks/${task.id}`, task);
-        dispatch(ac.editTasks(res.data));
+        dispatch(ac.editTask(res.data));
     } catch(err) {
         console.error(err);
     }
@@ -30,7 +30,7 @@ export const editTaskThunk = task => async dispatch => {
 export const fetchTaskThunk = id => async dispatch => {
     try {
         let res = await axios.get(`${path}/tasks/${id}`);
-        dispatch(ac.fetchCourse(res.data));
+        dispatch(ac.fetchTask(res.data));
     } catch(err) {
         console.error(err);
     }
