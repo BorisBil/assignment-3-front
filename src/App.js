@@ -1,7 +1,7 @@
 import "./App.css";
 
 //Router
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 //Components
 import {
@@ -11,20 +11,16 @@ import {
   EditTaskContainer
 } from './components/containers';
 
-// if you create separate components for adding/editing 
-// a student or instructor, make sure you add routes to those
-// components here
-
 const App = () => {
   return (
     <div className="App">
-      <Routes>
-        <Route exact path="/" element = {<HomePageContainer/>} />
-        <Route exact path="/tasks" element = {<AllTasksContainer/>} />
-        <Route exact path="/task/:id" element = {<TaskContainer/>} />
-        <Route exact path="/edittask/:id" element = {<EditTaskContainer/>} />
+      <Switch>
+        <Route exact path="/" component = {HomePageContainer} />
+        <Route exact path="/tasks" component = {AllTasksContainer} />
+        <Route exact path="/task/:id" component = {TaskContainer} />
+        <Route exact path="/edittask/:id" component = {EditTaskContainer} />
 
-      </Routes>        
+      </Switch>        
     </div>
   );
 }

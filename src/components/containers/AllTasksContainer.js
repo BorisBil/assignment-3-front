@@ -2,9 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import { 
-  fetchAllTasksThunk,
-} from '../../store/thunks';
+import { fetchAllTasksThunk } from '../../store/thunks';
 
 import AllTasksView from '../views/AllTasksView';
 
@@ -12,6 +10,7 @@ class AllTasksContainer extends Component {
     componentDidMount() {
         this.props.fetchAllTasks();
     }
+    
     render(){
         return(
             <div>
