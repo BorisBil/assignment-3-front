@@ -17,7 +17,7 @@ export const fetchAllTasksThunk = () => async (dispatch) => {
 };
 
 /** Edit Tasks */
-export const editTaskThunk = task => async dispatch => {
+export const editTaskThunk = task => async (dispatch) => {
     try {
         let res = await axios.put(`${path}/tasks/${task.id}`, task);
         dispatch(ac.editTask(res.data));
@@ -27,7 +27,7 @@ export const editTaskThunk = task => async dispatch => {
 };
 
 /** Single Task */
-export const fetchTaskThunk = id => async dispatch => {
+export const fetchTaskThunk = id => async (dispatch) => {
     try {
         let res = await axios.get(`${path}/tasks/${id}`);
         dispatch(ac.fetchTask(res.data));
